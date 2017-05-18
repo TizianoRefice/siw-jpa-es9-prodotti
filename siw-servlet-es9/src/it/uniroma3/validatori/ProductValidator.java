@@ -23,10 +23,14 @@ public class ProductValidator {
 		if(nome == null || nome.equals("")) {
 			request.setAttribute("errNome", "Campo Obbligatorio!");
 			tuttoOK = false;
+		} else {
+			prodotto.setNome(nome);
 		}
 		if(descrizione == null || descrizione.equals("")) {
 			request.setAttribute("errDescirizione", "Campo Obbligatorio!");
 			tuttoOK = false;
+		} else {
+			prodotto.setDescrizione(descrizione);
 		}
 		//PREZZO --> verifichiamo che sia veramente un float
 		if(prezzo == null || prezzo.equals("")) {
