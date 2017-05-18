@@ -9,10 +9,15 @@
 <body>
 	<form action = "prodotto" method = "get">
 	<p> Nome*: <input type = "text" name = "nome" value ="${nome}"/> ${errNome }
+	
 	<p> Descrizione*: <input type = "text" name = "descrizione" value ="${descrizione}"/> ${errDescrizione }
+	
 	<p> Prezzo*: <input type = "text" name = "prezzo" value ="${prezzo}"/> ${errPrezzo }
+	
 	<p> Data Scadenza*: <input type = "text" name = "dataScadenza" value ="${dataScadenza}"/> ${errDataScadenza }
-	<p> *Campo Obbligatorio
+	
+	<p>
+	 *Campo Obbligatorio
 	<p>
 		<input type="submit" name="submit" value="invia"/>
 	</form>

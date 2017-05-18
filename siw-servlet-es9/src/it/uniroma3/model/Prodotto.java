@@ -2,11 +2,18 @@ package it.uniroma3.model;
 
 import java.util.Date;
 
+import javax.persistence.*;
+
+@Entity
 public class Prodotto{
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String nome;
 	private String descrizione;
 	private float prezzo;
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataScadenza;
 	
 	public Prodotto(){}

@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +6,10 @@
 <title>Prodotti</title>
 </head>
 <body>
-	Lista prodotti:
-	<ul>
-		<c:forEach var = "prodotto" items = "${prodotti}">
-		<li> ${prodotto.nome }, ${prodotto.prezzo } </li>
-		</c:forEach>
-	</ul>
-
+	<h1>Prodotto:</h1>
+	<p>Nome: ${prodotto.nome}
+	<p>Descrizione: ${prodotto.descrizione}
+	<p>Prezzo: ${prodotto.prezzo}
+	<p>Data Scadenza: ${prodotto.dataScadenza}
 </body>
 </html>
