@@ -28,9 +28,14 @@ public class ControllerProdotto extends HttpServlet{
 		Prodotto prodotto = new Prodotto();
 		request.setAttribute("prodotto", prodotto);
 		
-		//servono altri controlli: che quello che abbiamo scritto per il prezzo sia veramente un numero, ma il codice diventa lungo
-		//lo organizziamo meglio facendo un metodo (o una classe: ValidatorProdotto) che fa dei controlli
-		//su quello che arriva da input
+		if(request.getParameter("comand") != null) {
+			long id = Long.parseLong(request.getParameter("id"));
+			ProductService ps = new ProductService();
+			Prodotto p = ps.getOneProduct(id);
+			ps.delete(p);
+			request.setAttribute("prodotti", ps.getProdotti());
+			nextPage = "/prodotti.jsp";
+		}
 		
 		ProductValidator validator = new ProductValidator();
 		if(validator.validate(request)) {  // se  i dati sono corretti crea un oggetto prodotto e chiede al servizio di inserire il prodotto
@@ -47,6 +52,11 @@ public class ControllerProdotto extends HttpServlet{
 		return;
 	}
 	
+	//servono altri controlli: che quello che abbiamo scritto per il prezzo sia veramente un numero, ma il codice diventa lungo
+	//lo organizziamo meglio facendo un metodo (o una classe: ValidatorProdotto) che fa dei controlli
+	//su quello che arriva da input
+	
+	//questo mi mostra la pagina con la descrizione del prodotto
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String nextPage = "/prodotti.jsp";

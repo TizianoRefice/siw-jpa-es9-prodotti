@@ -14,7 +14,7 @@
 			<!-- mettiamo un bottone per cancellare un prodotto --> 
 			<form action="prodotto" method = "post"> <!-- dobbiamo passare il parametro che indica il prodotto da cancellare -->
 				<input type = "hidden" value = "${prodotto.id }" name = "id"/> <!-- con hidden teniamo nascosto il parametro dell'oggetto da rimuovere -->
-				<input type = "submit" value = "rimuovi"/>
+				<input type = "submit" value = "rimuovi" name = "comand"/>
 			</form>
 			</li>
 		</c:forEach>
