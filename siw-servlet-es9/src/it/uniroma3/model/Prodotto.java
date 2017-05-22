@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(name = "findAll", query = "SELECT p FROM Prodotto p") 
 public class Prodotto{
 	
 	@Id
@@ -17,6 +18,14 @@ public class Prodotto{
 	private Date dataScadenza;
 	
 	public Prodotto(){}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;

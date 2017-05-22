@@ -7,7 +7,7 @@
 <title>Nuovo prodotto</title>
 </head>
 <body>
-	<form action = "prodotto" method = "get">
+	<form action = "prodotto" method = "post">
 	<p> Nome*: <input type = "text" name = "nome" value ="${nome}"/> ${errNome }
 	
 	<p> Descrizione*: <input type = "text" name = "descrizione" value ="${descrizione}"/> ${errDescrizione }
@@ -21,6 +21,6 @@
 	<p>
 		<input type="submit" name="submit" value="invia"/>
 	</form>
-
+	<a href = "prodotto">Lista Prodotti</a> <!-- href = etc.. equivale ad una get -->
 </body>
 </html>
